@@ -1,5 +1,5 @@
 $('#scratchCard').wScratchPad({
-    size        : 100,          // The size of the brush/scratch.
+    size        : 50,          // The size of the brush/scratch.
     bg          : 'images/winning-card.jpg',  // Background (image path or hex color).
     fg          : 'google-scratch-card.jpg',  // Foreground (image path or hex color).
     realtime    : true,       // Calculates percentage in realitime.
@@ -8,3 +8,9 @@ $('#scratchCard').wScratchPad({
     scratchMove : null,       // Set scratcMove callback.
     cursor      : 'pointer' // Set cursor.
   });
+
+function scratchoff(){
+  $('#scratchCard').wScratchPad({
+    bg          : 'images/winning-card.jpg',  // Background (image path or hex color).
+  });
+}
