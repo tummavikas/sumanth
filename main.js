@@ -8,9 +8,3 @@ $('#scratchCard').wScratchPad({
     scratchMove : null,       // Set scratcMove callback.
     cursor      : 'pointer' // Set cursor.
   });
-
-function scratchoff(){
-  $('#scratchCard').wScratchPad({
-    bg          : 'images/winning-card.jpg',  // Background (image path or hex color).
-  });
-}
