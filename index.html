@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetailBoost - Ramulu Kirana Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="/Script.js"></script>
+
+
+    <!-- // -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142315691-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-142315691-1');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600,700|Open+Sans:400,600,700&display=swap"
+    rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon//apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon//apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon//apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon//apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon//apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon//apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon//apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon//apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon//favicon-16x16.png">
+    <link rel="manifest" href="../favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../favicon//ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+   <nav> <img src="/images/1.jpg" title="logoo">
+</nav>
+<body>
+    <h2 class="head-form">Welcome to Ramulu Kirana Store</h2>
+    <p style="font-style: italic;">Your Trusted Partner in Savings</p>
+    <div class="container " id="form-container">
+        <h3>Enter Your Details</h3>
+        <input class="form-input"; type="text" id="name" placeholder=" name">
+        <input class="form-input"; type="tel" id="phone" placeholder=" phone number" maxlength="10">
+        <input class="form-input"; type="number" id="bill" placeholder=" bill amount">
+        <button class="btn submits sign-up " onclick="submitDetails()" style="background: #ff6600; color: white;">Enter</button>
+        <p id="error-message" style="color: red; display: none;">Invalid phone number</p>
+        <p id="bill-message" style="color: red; display: none;">bill should be atleast 100</p>
+    </div>
+    <div id="scratch-section" class="hidden width:300px">
+            <h3>Ready to Scratch Your Luck?</h3>
+
+        <div class="color:white">
+            <div class="container1">
+    
+                <div id="scratchCard" onclick="revealDiscount()">
+                    <p class="result-message hidden discount-message" id="discount-message"></p>
+                    <p id="final-bill" ></p>
+                    <p id="visits-left">Only <span id="visit-count">5</span> visits left for spin</p>
+                </div>
+                <button class="btn" value="Reset" onclick="$('#scratchCard').wScratchPad('reset');"/>Reset</button>
+            
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/wScratchPad.min.js"></script>
+        <script>
+        $('#scratchCard').wScratchPad({
+        size        : 50,          // The size of the brush/scratch.
+        bg          : './images/1.jpg',  // Background (image path or hex color).
+        // fg          : '#0195FF',  // Foreground (image path or hex color).
+        fg          : './images/google-scratch-card.jpg',  // Foreground (image path or hex color).
+        realtime    : true,       // Calculates percentage in realitime.
+        scratchDown: null, 
+        // function(e, percent){ console.log("scratchDown:" + percent); },
+      scratchMove: function(e, percent){ 
+        // console.log("scratchMove:" + percent); 
+    if(percent > 50){
+        this.clear();
+    }
+    },
+      scratchUp: null, 
+      // function(e, percent){ console.log("scratchUp:" +  percent); },
+      cursor      : 'pointer' // Set cursor.
+      });
+    
+    
+     
+        </script>
+            <!-- <div class="scratch-area" onclick="revealDiscount()">Scratch Here</div>
+            <p class="result-message hidden discount-message" id="discount-message"></p>
+            <p id="final-bill" ></p>
+            <p id="visits-left">Only <span id="visit-count">5</span> visits left for spin</p> -->
+        </div>
+    </div>
+</div>
+
+    <div id="spin-section" class="hidden">
+        <h3>Try Your Luck on the Spin Wheel!</h3>
+        <div class="spin-wheel" onclick="spinWheel()">SPIN</div>
+        <p class="result-message hidden" id="spin-message"></p>
+    </div>
+
+    <p id="visit-again-message" class="hidden visit-again"></p>
+
+</body>
+</html>
